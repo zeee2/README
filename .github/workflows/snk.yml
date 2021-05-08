@@ -3,6 +3,7 @@ name: generate snk animation
 on:
   schedule:
     - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 env:
   TZ: "Asia/Seoul"
