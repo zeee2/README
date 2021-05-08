@@ -13,8 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@master
       - uses: Platane/snk@master
         id: snake-gif
         with:
           github_user_name: keepsobp
           svg_out_path: snk.svg
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          branch: main
+          github_token: ${{ github.token }}
